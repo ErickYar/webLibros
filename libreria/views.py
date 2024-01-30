@@ -17,11 +17,11 @@ def libros(request):
     return render(request,"libreria/index.html",{"libros":libros})
 
 def crear(request):
-    formulario=LibroForm(request.POST or None,request.FILES or None )
+    formulario=LibroForm(request.POST or None,request.FILES or None)
     if formulario.is_valid():
         formulario.save()
         return redirect("libros")
-    return render (request,"libreria/crear.html",{"formulario":formulario})
+    return render(request,"libreria/crear.html",{"formulario":formulario})
 
 def editar(request,id):
     libro=Libro.objects.get(id=id)
@@ -35,10 +35,3 @@ def eliminar(request,id):
     libro=Libro.objects.get(id=id)
     libro.delete()
     return redirect("libros")
-
-
-
-
-
-
-

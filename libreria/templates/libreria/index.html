@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 
-{% block titulo %} Lista de Libros {% endblock %}
+{% block titulo %} Lista de libros {% endblock %}
 
 {% block contenido %}
-
 <div class="card">
     <div class="card-header">
         <a name="" id="" class="btn btn-success" href="{% url 'crear' %}" role="button">Nuevo Libro</a>
@@ -15,20 +14,20 @@
                 <tr>
                     <th>ID</th>
                     <th>Titulo</th>
-                    <th>Image</th>
-                    <th>Descripción</th>
+                    <th>Imagen</th>
+                    <th>Descripcion</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                {% for libro en libros %}
+                {% for libro in libros %}
                 <tr>
-                    <td>{{ libro.id }} </td>
-                    <td> {{libro.titulo}} </td>
+                    <td>{{ libro.id }}</td>
+                    <td>{{ libro.titulo }}</td>
                     <td>
-                        <img src="{{libro.image.url}}" height="70">
+                        <img src="{{ libro.imagen.url }}" height="70" />
                     </td>
-                    <td>{{libro.descripcion}} </td>
+                    <td>{{ libro.descripcion }}</td>
                     <td>
                         <a name="" id="" class="btn btn-info" href="{% url 'editar' libro.id %}" role="button">Editar</a>
                         <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' libro.id %}" role="button">Borrar</a>
@@ -40,7 +39,7 @@
 
     </div>
     <div class="card-footer text-muted">
-        @Erick-Yarleque Derechos Reservados
+        @Erick los derechos reservados(superveliz)
     </div>
 </div>
 {% endblock %}
